@@ -111,7 +111,7 @@ a {
 }
 .profile .picture-resume img {
   border-radius: 50%;
-  width: 180px;
+  width: 120px;
 }
 @media (max-width: 1500px) {
   .profile .picture-resume img {
@@ -194,7 +194,7 @@ a {
   left: 0;
 }
 .profile .st0, .profile .st1 {
-  fill: #66cc99;
+  fill: #4db380;
 }
 
 .experience {
