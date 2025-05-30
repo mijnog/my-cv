@@ -31,7 +31,7 @@ a {
 
 .bold {
   color: #4a4e51;
-  font-weight: 400;
+  font-weight: 400; /* This styles "Junior Penetration Tester" and "Books" titles */
 }
 
 .resume-wrapper {
@@ -45,14 +45,16 @@ a {
 }
 
 .profile {
-  background: #fff;
+  background: #fff; /* Ensures left panel is white */
   width: 40%;
   float: left;
   color: #9099a0;
+  min-height: 100vh; /* ADDED: Makes white panel extend to full viewport height if content is shorter */
 }
 @media (max-width: 850px) {
   .profile {
     width: 100%;
+    min-height: auto; /* Reset min-height for stacked layout on smaller screens */
   }
 }
 .profile .name-wrapper {
@@ -188,12 +190,29 @@ a {
     margin-bottom: 50px;
   }
 }
+
+/* ADDED: Styling for the new "Books" section */
+.profile .books {
+  text-align: left;
+  font-weight: 300; /* Matches font weight of .contact-presentation paragraph */
+  margin-top: 50px;  /* Space above the "Books" section */
+  margin-bottom: 100px; /* Space below the "Books" section */
+  clear: both; /* Ensures it clears any preceding floats */
+}
+
+.profile .books p {
+  /* font-weight: 300; is inherited from .profile .books */
+  /* color: #9099a0; is inherited from .profile */
+  line-height: 1.5em; /* Matches body line-height */
+}
+/* END ADDED Styling for "Books" section */
+
 .profile svg .st0, .profile svg .st1 {
   fill: #5297DE; /* New Fedora Blue from image */
 }
 
 .experience {
-  background: #323337; /* <<< ADJUSTED to match color from original CV image */
+  background: #2A2B2F; /* CHANGED TO DARKER SHADE - FEEL FREE TO ADJUST THIS VALUE */
   width: 60%;
   float: left;
   position: relative;
@@ -205,6 +224,7 @@ a {
 @media (max-width: 850px) {
   .experience {
     width: 100%;
+    min-height: auto; /* Reset min-height for stacked layout */
   }
 }
 .experience h3.experience-title {
@@ -241,7 +261,7 @@ a {
     margin-bottom: 40px;
   }
 }
-.experience .experience-title {
+.experience .experience-title { /* This is for job titles like "Security Consultant (Intern)" */
   color: white;
   margin-bottom: 15px;
 }
@@ -260,7 +280,7 @@ a {
   }
 }
 
-.section-wrapper {
+.section-wrapper { /* This wraps SKILLS and HOBBIES sections */
   width: 50%;
   float: left;
   text-align: left;
@@ -273,10 +293,10 @@ a {
     width: 100%;
   }
 }
-.section-wrapper:nth-child(3) {
+.section-wrapper:nth-child(3) { /* This was likely for a third column if it existed, might not be needed if only 2 skill/hobby sections */
   padding-right: 8%;
 }
-.section-wrapper h3.section-title {
+.section-wrapper h3.section-title { /* SKILLS and HOBBIES titles */
   color: #5297DE; /* New Fedora Blue from image */
   text-align: left;
   text-transform: uppercase;
