@@ -212,7 +212,7 @@ a {
   text-transform: uppercase;
   font-size: 1.2em;
   margin-bottom: 20px;
-  font-weight: 400;
+  font-weight: 600; /* <<< CHANGED FROM 400 */
 }
 .experience .company-wrapper {
   width: 30%;
@@ -281,7 +281,7 @@ a {
   text-transform: uppercase;
   font-size: 1.2em;
   margin-bottom: 20px;
-  font-weight: 400;
+  font-weight: 600; /* <<< CHANGED FROM 400 */
 }
 .section-wrapper .skill-percentage {
   margin-bottom: 10px;
