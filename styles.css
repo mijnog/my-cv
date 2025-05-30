@@ -1,3 +1,4 @@
+      
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 *, *::after, *::before {
@@ -15,7 +16,7 @@ body {
 }
 
 a {
-  color: #66cc99;
+  color: #0B57A4; /* Fedora Blue */
   text-decoration: none;
 }
 
@@ -187,14 +188,8 @@ a {
     margin-bottom: 50px;
   }
 }
-.profile svg {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.profile .st0, .profile .st1 {
-  fill: #4db380;
+.profile svg .st0, .profile svg .st1 {
+  fill: #0B57A4; /* Fedora Blue */
 }
 
 .experience {
@@ -213,7 +208,7 @@ a {
   }
 }
 .experience h3.experience-title {
-  color: #66cc99;
+  color: #0B57A4; /* Fedora Blue */
   text-align: left;
   text-transform: uppercase;
   font-size: 1.2em;
@@ -282,7 +277,7 @@ a {
   padding-right: 8%;
 }
 .section-wrapper h3.section-title {
-  color: #66cc99;
+  color: #0B57A4; /* Fedora Blue */
   text-align: left;
   text-transform: uppercase;
   font-size: 1.2em;
@@ -304,42 +299,52 @@ a {
 .section-wrapper .skill-percentage::before {
   content: "";
   height: 6px;
-  background: #66cc99;
+  background: #0B57A4; /* Fedora Blue */
   position: absolute;
   margin-top: 3px;
   bottom: 0;
+  /* The animation will fill from 0 to the specified width */
 }
+
+/* Skill 1: Python - 80% */
 .section-wrapper .skill-percentage:nth-child(1)::before {
   width: 80%;
   animation: skill_1 0.6s ease;
 }
+/* Skill 2: Bash Scripting - 60% */
 .section-wrapper .skill-percentage:nth-child(2)::before {
   width: 60%;
   animation: skill_2 0.6s ease;
 }
+/* Skill 3: C/C++ - 40% */
 .section-wrapper .skill-percentage:nth-child(3)::before {
   width: 40%;
   animation: skill_3 0.6s ease;
 }
+/* Skill 4: SQL - 70% */
 .section-wrapper .skill-percentage:nth-child(4)::before {
   width: 70%;
   animation: skill_4 0.6s ease;
 }
+/* Skill 5: Kali Linux Tools - 70% */
 .section-wrapper .skill-percentage:nth-child(5)::before {
   width: 70%;
   animation: skill_5 0.6s ease;
 }
+/* Skill 6: Networking Fundamentals - 90% */
 .section-wrapper .skill-percentage:nth-child(6)::before {
   width: 90%;
   animation: skill_6 0.6s ease;
 }
+/* Skill 7: Windows/Linux Privilege Escalation - 50% */
 .section-wrapper .skill-percentage:nth-child(7)::before {
   width: 50%;
   animation: skill_7 0.6s ease;
 }
 
 
-@keyframes skill_1 {
+/* CORRECTED KEYFRAMES */
+@keyframes skill_1 { /* Python - 80% */
   from {
     width: 0%;
   }
@@ -347,31 +352,31 @@ a {
     width: 80%;
   }
 }
-@keyframes skill_2 {
+@keyframes skill_2 { /* Bash Scripting - 60% */
   from {
     width: 0%;
   }
   to {
-    width: 90%;
+    width: 60%; /* Corrected from 90% */
   }
 }
-@keyframes skill_3 {
+@keyframes skill_3 { /* C/C++ - 40% */
   from {
     width: 0%;
   }
   to {
-    width: 50%;
+    width: 40%; /* Corrected from 50% */
   }
 }
-@keyframes skill_4 {
+@keyframes skill_4 { /* SQL - 70% */
   from {
     width: 0%;
   }
   to {
-    width: 60%;
+    width: 70%; /* Corrected from 60% */
   }
 }
-@keyframes skill_5 {
+@keyframes skill_5 { /* Kali Linux Tools - 70% */
   from {
     width: 0%;
   }
@@ -379,21 +384,23 @@ a {
     width: 70%;
   }
 }
-@keyframes skill_6 {
+@keyframes skill_6 { /* Networking Fundamentals - 90% */
   from {
     width: 0%;
   }
   to {
-    width: 70%;
+    width: 90%; /* Corrected from 70% */
   }
 }
-@keyframes skill_7 {
+@keyframes skill_7 { /* Windows/Linux Privilege Escalation - 50% */
   from {
     width: 0%;
   }
   to {
-    width: 70%;
+    width: 50%; /* Corrected from 70% */
   }
 }
 
 /*# sourceMappingURL=styles.css.map */
+
+    
