@@ -1,66 +1,65 @@
-      
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
 *, *::after, *::before {
   box-sizing: border-box;
 }
 
 html, body {
   height: 100%;
+  margin: 0; /* Good practice */
 }
 
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 1.5em;
+  color: #333; /* Default text color */
 }
 
 a {
-  color: #5297DE; /* New Fedora Blue from image */
+  color: #5297DE;
   text-decoration: none;
 }
-
-.clearfix::after, .clearfix::before {
-  content: " ";
-  display: table;
-}
-
-.clearfix::after {
-  clear: both;
+a:hover {
+  text-decoration: underline;
 }
 
 .bold {
   color: #4a4e51;
-  font-weight: 400; /* This styles "Junior Penetration Tester" and "Books" titles */
+  font-weight: 600; /* Made it a bit bolder to stand out */
 }
 
 .resume-wrapper {
-  position: relative;
-  text-align: center;
-  height: 100%;
+  display: flex;
+  min-height: 100vh; /* Ensure it tries to take full viewport height */
 }
 
 .container {
-  min-height: 600px;
+  min-height: 600px; /* Kept from original, adjust if needed */
+  width: 100%; /* Ensure container takes full width of its parent flex item */
 }
 
 .profile {
-  background: #fff; /* Ensures left panel is white */
-  width: 40%;
-  float: left;
+  background: #fff;
+  flex: 0 0 40%; /* Profile takes 40% of the width, doesn't grow or shrink */
   color: #9099a0;
-  min-height: 100vh; /* ADDED: Makes white panel extend to full viewport height if content is shorter */
+  /* min-height: 100vh; /* No longer needed here, parent .resume-wrapper handles it */
 }
-@media (max-width: 850px) {
-  .profile {
-    width: 100%;
-    min-height: auto; /* Reset min-height for stacked layout on smaller screens */
-  }
+
+.profile-header { /* New class */
+  display: flex;
+  align-items: center; /* Vertically align items if they have different heights */
+  margin-bottom: 20px; /* Space below header */
 }
+
 .profile .name-wrapper {
-  float: left;
-  width: 60%;
+  /* float: left; */ /* REMOVED */
+  /* width: 60%; */ /* REMOVED - Flexbox handles width */
+  flex: 1; /* Allows name-wrapper to take remaining space */
+  padding-left: 20px; /* Space between pic and name */
 }
+
 .profile h1 {
   font-size: 2.5em;
   text-align: left;
@@ -68,246 +67,191 @@ a {
   color: #4a4e51;
   text-transform: uppercase;
   line-height: 1em;
-  padding-top: 40px;
+  padding-top: 40px; /* Keep original padding or adjust */
+  margin: 0; /* Reset default h1 margin */
 }
-@media (max-width: 1200px) {
-  .profile h1 {
-    padding-top: 20px;
-  }
-}
-@media (max-width: 450px) {
-  .profile h1 {
-    font-size: 1.8em;
-    padding-top: 20px;
-  }
-}
+
 .profile li {
   margin-bottom: 10px;
 }
+
 .profile .picture-resume-wrapper {
-  width: 40%;
-  display: block;
-  float: left;
+  /* width: 40%; */ /* REMOVED - Flexbox handles width */
+  /* display: block; */ /* REMOVED */
+  /* float: left; */ /* REMOVED */
+  flex-shrink: 0; /* Prevent picture from shrinking if name is long */
 }
-@media (max-width: 1200px) {
-  .profile .picture-resume-wrapper {
-    width: 100%;
-  }
-}
+
 .profile .picture-resume {
-  width: 220px;
-  height: 220px;
+  width: 150px; /* Unified size, adjust as needed */
+  height: 150px;
   background-size: cover;
   border-radius: 50%;
-  margin-right: 0px;
-  display: table;
-  position: relative;
-  vertical-align: middle;
+  display: flex; /* Use flex to center image easily */
+  align-items: center;
+  justify-content: center;
+  /* margin-right: 0px; */ /* REMOVED */
+  /* position: relative; */ /* Not strictly needed for this setup */
+  /* vertical-align: middle; */ /* REMOVED */
 }
-.profile .picture-resume span {
-  display: table-cell;
-  vertical-align: middle;
-  position: relative;
-  margin: 0 auto;
-  z-index: 10;
-  text-align: center;
-}
+
 .profile .picture-resume img {
   border-radius: 50%;
-  width: 150px;
+  width: 100%; /* Make image fill the .picture-resume container */
+  height: 100%;
+  object-fit: cover; /* Ensure image covers without distortion */
 }
-@media (max-width: 1500px) {
-  .profile .picture-resume img {
-    width: 150px;
-  }
-}
-@media (max-width: 1200px) {
-  .profile .picture-resume img {
-    width: 150px;
-    height: 150px;
-  }
-}
-@media (max-width: 1500px) {
-  .profile .picture-resume {
-    width: 150px;
-    height: 150px;
-  }
-}
-@media (max-width: 1200px) {
-  .profile .picture-resume {
-    width: 150px;
-    height: 150px;
-  }
-}
-@media (max-width: 450px) {
-  .profile .picture-resume {
-    width: 150px;
-    height: 150px;
-  }
-}
-.profile .contact-info {
-  margin-top: 100px;
+
+.profile .contact-info,
+.profile .contact-social {
+  margin-top: 50px; /* Adjusted from 100px, looks more balanced */
   font-weight: 300;
+  display: flex; /* Key change for lists */
 }
-@media (max-width: 1200px) {
-  .profile .contact-info {
-    margin-top: 70px;
-  }
-}
-@media (max-width: 450px) {
-  .profile .contact-info {
-    margin-top: 50px;
-  }
-}
+
 .profile .list-titles {
-  float: left;
+  /* float: left; */ /* REMOVED */
   text-align: left;
   font-weight: 600;
-  width: 40%;
+  /* width: 40%; */ /* REMOVED */
+  flex: 0 0 80px; /* Fixed width for titles, adjust as needed */
   color: #4a4e51;
+  padding-right: 15px; /* Space between titles and content */
 }
+
 .profile .list-content {
-  float: left;
-  width: 60%;
+  /* float: left; */ /* REMOVED */
+  /* width: 60%; */ /* REMOVED */
+  flex: 1; /* Takes remaining space */
   text-align: left;
   font-weight: 300;
 }
+.profile .list-content li { word-break: break-word; } /* Helps with long links/emails */
+
+
 .profile .contact-presentation {
   text-align: left;
   font-weight: 300;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-@media (max-width: 1200px) {
-  .profile .contact-presentation {
-    margin-top: 70px;
-    margin-bottom: 70px;
-  }
-}
-@media (max-width: 850px) {
-  .profile .contact-presentation {
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-/* ADDED: Styling for the new "Books" section */
 .profile .books {
   text-align: left;
-  font-weight: 300; /* Matches font weight of .contact-presentation paragraph */
-  margin-top: 50px;  /* Space above the "Books" section */
-  margin-bottom: 100px; /* Space below the "Books" section */
-  clear: both; /* Ensures it clears any preceding floats */
+  font-weight: 300;
+  margin-top: 50px;
+  margin-bottom: 50px; /* Reduced for consistency */
+  /* clear: both; */ /* REMOVED */
 }
 
 .profile .books p {
-  /* font-weight: 300; is inherited from .profile .books */
-  /* color: #9099a0; is inherited from .profile */
-  line-height: 1.5em; /* Matches body line-height */
+  line-height: 1.5em;
 }
-/* END ADDED Styling for "Books" section */
 
+/* SVGs - kept as is, assuming they are used elsewhere or planned */
 .profile svg .st0, .profile svg .st1 {
-  fill: #5297DE; /* New Fedora Blue from image */
+  fill: #5297DE;
 }
 
 .experience {
-  background: #2A2B2F; /* CHANGED TO DARKER SHADE - FEEL FREE TO ADJUST THIS VALUE */
-  width: 60%;
-  float: left;
-  position: relative;
+  background: #2A2B2F;
+  flex: 0 0 60%; /* Experience takes 60% of the width, doesn't grow or shrink */
+  /* float: left; */ /* REMOVED */
+  /* position: relative; */ /* REMOVED unless specifically needed for pseudo-elements */
   color: #9099a0;
   font-weight: 300;
-  min-height: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; /* No longer needed here */
 }
-@media (max-width: 850px) {
-  .experience {
-    width: 100%;
-    min-height: auto; /* Reset min-height for stacked layout */
-  }
-}
-.experience h3.experience-title {
-  color: #5297DE; /* New Fedora Blue from image */
+
+/* Renamed to avoid conflict with .experience-title used for job titles */
+.experience h3.experience-title-heading {
+  color: #5297DE;
   text-align: left;
   text-transform: uppercase;
   font-size: 1.2em;
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* Increased for more space */
   font-weight: 600;
 }
+
+.experience-entry { /* New class for each job entry */
+  display: flex;
+  margin-bottom: 40px; /* Space between entries, reduced from 60px */
+}
+
 .experience .company-wrapper {
-  width: 30%;
-  float: left;
+  /* width: 30%; */ /* REMOVED */
+  flex: 0 0 30%; /* Company info takes 30% of the entry width */
+  /* float: left; */ /* REMOVED */
   text-align: left;
-  padding-right: 5%;
-  margin-bottom: 60px;
+  padding-right: 20px; /* Adjusted padding */
+  /* margin-bottom: 60px; */ /* REMOVED - Handled by .experience-entry */
 }
-@media (max-width: 450px) {
-  .experience .company-wrapper {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-}
+
 .experience .job-wrapper {
-  width: 70%;
-  float: left;
+  /* width: 70%; */ /* REMOVED */
+  flex: 1; /* Job details take remaining space */
+  /* float: left; */ /* REMOVED */
   text-align: left;
-  padding-right: 5%;
-  margin-bottom: 60px;
+  /* padding-right: 5%; */ /* REMOVED or adjust if still needed */
+  /* margin-bottom: 60px; */ /* REMOVED - Handled by .experience-entry */
 }
-@media (max-width: 450px) {
-  .experience .job-wrapper {
-    width: 100%;
-    margin-bottom: 40px;
-  }
-}
-.experience .experience-title { /* This is for job titles like "Security Consultant (Intern)" */
+
+.experience .experience-title { /* This is for company names and job titles */
   color: white;
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* Reduced for tighter look */
+  font-weight: 400; /* Slightly less than section titles */
+}
+.experience .company-description ul,
+.experience .company-description p {
+  margin-top: 0;
+  padding-left: 20px; /* Indent bullet points */
+}
+.experience .company-description li {
+  margin-bottom: 8px;
 }
 
 .section-padding {
-  padding: 60px 60px 40px 40px;
+  padding: 60px 40px; /* Simplified, top/bottom | left/right */
 }
-@media (max-width: 850px) {
-  .section-padding {
-    padding: 80px 15% 40px 10%;
-  }
-}
-@media (max-width: 450px) {
-  .section-padding {
-    padding: 40px 10% 20px 5%;
-  }
+
+.skills-hobbies-wrapper { /* New class */
+  display: flex;
+  gap: 40px; /* Space between skills and hobbies sections */
+  margin-top: 40px; /* Space above this combined section */
 }
 
 .section-wrapper { /* This wraps SKILLS and HOBBIES sections */
-  width: 50%;
-  float: left;
+  /* width: 50%; */ /* REMOVED - Flexbox handles width */
+  flex: 1; /* Each section takes equal space within skills-hobbies-wrapper */
+  /* float: left; */ /* REMOVED */
   text-align: left;
   color: #9099a0;
   font-weight: 300;
   margin-bottom: 20px;
 }
-@media (max-width: 450px) {
-  .section-wrapper {
-    width: 100%;
-  }
-}
-.section-wrapper:nth-child(3) { /* This was likely for a third column if it existed, might not be needed if only 2 skill/hobby sections */
-  padding-right: 8%;
-}
-.section-wrapper h3.section-title { /* SKILLS and HOBBIES titles */
-  color: #5297DE; /* New Fedora Blue from image */
+/* .section-wrapper:nth-child(3) - REMOVED (was for a third column that doesn't exist) */
+
+.section-wrapper h3.section-title {
+  color: #5297DE;
   text-align: left;
   text-transform: uppercase;
   font-size: 1.2em;
   margin-bottom: 20px;
   font-weight: 600;
 }
+.section-wrapper p {
+  margin-bottom: 20px; /* Space after paragraphs in skills/hobbies */
+}
+.section-wrapper ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 .section-wrapper .skill-percentage {
   margin-bottom: 10px;
   position: relative;
 }
+
 .section-wrapper .skill-percentage::after {
   content: "";
   width: 100%;
@@ -315,110 +259,108 @@ a {
   background: #4a4e51;
   display: block;
   margin-top: 3px;
+  border-radius: 3px; /* Added for softer edges */
 }
+
 .section-wrapper .skill-percentage::before {
   content: "";
   height: 6px;
-  background: #5297DE; /* New Fedora Blue from image */
+  background: #5297DE;
   position: absolute;
   margin-top: 3px;
   bottom: 0;
+  border-radius: 3px; /* Added for softer edges */
 }
 
-/* Skill 1: Python - 80% */
-.section-wrapper .skill-percentage:nth-child(1)::before {
-  width: 80%;
-  animation: skill_1 0.6s ease;
-}
-/* Skill 2: Bash Scripting - 60% */
-.section-wrapper .skill-percentage:nth-child(2)::before {
-  width: 60%;
-  animation: skill_2 0.6s ease;
-}
-/* Skill 3: C/C++ - 40% */
-.section-wrapper .skill-percentage:nth-child(3)::before {
-  width: 40%;
-  animation: skill_3 0.6s ease;
-}
-/* Skill 4: SQL - 70% */
-.section-wrapper .skill-percentage:nth-child(4)::before {
-  width: 70%;
-  animation: skill_4 0.6s ease;
-}
-/* Skill 5: Kali Linux Tools - 70% */
-.section-wrapper .skill-percentage:nth-child(5)::before {
-  width: 70%;
-  animation: skill_5 0.6s ease;
-}
-/* Skill 6: Networking Fundamentals - 90% */
-.section-wrapper .skill-percentage:nth-child(6)::before {
-  width: 90%;
-  animation: skill_6 0.6s ease;
-}
-/* Skill 7: Windows/Linux Privilege Escalation - 50% */
-.section-wrapper .skill-percentage:nth-child(7)::before {
-  width: 50%;
-  animation: skill_7 0.6s ease;
-}
+/* Skill percentages and animations (Kept as is) */
+.section-wrapper .skill-percentage:nth-of-type(1)::before { width: 80%; animation: skill_1 0.6s ease; }
+.section-wrapper .skill-percentage:nth-of-type(2)::before { width: 60%; animation: skill_2 0.6s ease; }
+.section-wrapper .skill-percentage:nth-of-type(3)::before { width: 40%; animation: skill_3 0.6s ease; }
+.section-wrapper .skill-percentage:nth-of-type(4)::before { width: 70%; animation: skill_4 0.6s ease; }
+.section-wrapper .skill-percentage:nth-of-type(5)::before { width: 70%; animation: skill_5 0.6s ease; }
+.section-wrapper .skill-percentage:nth-of-type(6)::before { width: 90%; animation: skill_6 0.6s ease; }
+.section-wrapper .skill-percentage:nth-of-type(7)::before { width: 50%; animation: skill_7 0.6s ease; }
+
+@keyframes skill_1 { from { width: 0%; } to { width: 80%; } }
+@keyframes skill_2 { from { width: 0%; } to { width: 60%; } }
+@keyframes skill_3 { from { width: 0%; } to { width: 40%; } }
+@keyframes skill_4 { from { width: 0%; } to { width: 70%; } }
+@keyframes skill_5 { from { width: 0%; } to { width: 70%; } }
+@keyframes skill_6 { from { width: 0%; } to { width: 90%; } }
+@keyframes skill_7 { from { width: 0%; } to { width: 50%; } }
 
 
-@keyframes skill_1 { /* Python - 80% */
-  from {
-    width: 0%;
+/* --- Responsive --- */
+@media (max-width: 1200px) { /* Corresponds to your old 1200px breakpoint for image/name adjustments */
+  .profile h1 {
+    padding-top: 20px;
+    font-size: 2.2em; /* Slight reduction */
   }
-  to {
-    width: 80%;
+  .profile .contact-info, .profile .contact-social,
+  .profile .contact-presentation, .profile .books {
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
-}
-@keyframes skill_2 { /* Bash Scripting - 60% */
-  from {
-    width: 0%;
-  }
-  to {
-    width: 60%;
-  }
-}
-@keyframes skill_3 { /* C/C++ - 40% */
-  from {
-    width: 0%;
-  }
-  to {
-    width: 40%;
-  }
-}
-@keyframes skill_4 { /* SQL - 70% */
-  from {
-    width: 0%;
-  }
-  to {
-    width: 70%;
-  }
-}
-@keyframes skill_5 { /* Kali Linux Tools - 70% */
-  from {
-    width: 0%;
-  }
-  to {
-    width: 70%;
-  }
-}
-@keyframes skill_6 { /* Networking Fundamentals - 90% */
-  from {
-    width: 0%;
-  }
-  to {
-    width: 90%;
-  }
-}
-@keyframes skill_7 { /* Windows/Linux Privilege Escalation - 50% */
-  from {
-    width: 0%;
-  }
-  to {
-    width: 50%;
+  .profile .picture-resume {
+    width: 120px; /* Smaller picture */
+    height: 120px;
   }
 }
 
-/*# sourceMappingURL=styles.css.map */
+@media (max-width: 850px) {
+  .resume-wrapper {
+    flex-direction: column; /* Stack main columns */
+  }
+  .profile, .experience {
+    flex-basis: auto; /* Reset flex-basis */
+    width: 100%;    /* Take full width when stacked */
+    min-height: auto; /* Reset min-height for stacked layout */
+  }
+  .section-padding { /* Adjust padding for smaller screens */
+    padding: 40px 20px;
+  }
+  .profile-header {
+    flex-direction: column; /* Stack picture and name */
+    align-items: flex-start; /* Align to left */
+  }
+  .profile .name-wrapper {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+  .skills-hobbies-wrapper {
+    flex-direction: column; /* Stack skills and hobbies */
+    gap: 20px;
+  }
+}
 
-    
+@media (max-width: 450px) {
+  .profile h1 {
+    font-size: 1.8em;
+    padding-top: 20px;
+  }
+  .profile .picture-resume {
+    width: 100px;
+    height: 100px;
+  }
+  .experience-entry {
+    flex-direction: column; /* Stack company and job details */
+  }
+  .experience .company-wrapper {
+    flex-basis: auto;
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 10px; /* Space between company and job when stacked */
+  }
+  .profile .contact-info, .profile .contact-social {
+    flex-direction: column; /* Stack list titles and content */
+  }
+  .profile .list-titles {
+    flex-basis: auto;
+    margin-bottom: 5px;
+  }
+  .section-padding {
+    padding: 30px 15px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */ /* Keep if you use SASS/SCSS */
