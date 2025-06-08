@@ -356,6 +356,17 @@ a:hover {
   padding: 0 !important;
 }
 
+.skill-item img[alt*="GDB"] {
+  width: 85px !important;
+  height: 85px !important;
+  object-fit: contain;
+  padding: 0 !important;
+}
+
+.skill-item img[alt*="GDB"] + span {
+  margin-top: -14px;
+}
+
 .skill-item span {
   margin-top: 2px;
   font-size: 1em;
