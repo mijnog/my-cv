@@ -213,7 +213,7 @@ a:hover {
 .skills-hobbies-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 12px; /* MODIFIED: Reduced from 24px for less space between sections */
+  gap: 12px; 
   margin-top: 40px;
 }
 
@@ -223,7 +223,7 @@ a:hover {
   text-align: left;
   color: var(--color-text-experience-light);
   font-weight: var(--font-weight-light);
-  margin-bottom: 0px; /* MODIFIED: Changed from 16px, gap will control inter-section spacing */
+  margin-bottom: 0px; 
 }
 
 .section-wrapper h3.section-title {
@@ -231,7 +231,7 @@ a:hover {
   text-align: left;
   text-transform: uppercase;
   font-size: 1.2em;
-  margin-bottom: 28px; /* MODIFIED: Increased from 20px for more space below title, before icons */
+  margin-bottom: 28px; 
   font-weight: var(--font-weight-semibold);
 }
 .section-wrapper p {
@@ -320,9 +320,11 @@ a:hover {
   }
 }
 
-.section-title { /* This rule might be redundant given .section-wrapper h3.section-title */
-  margin-bottom: 24px; /* This was 24px, check if .section-wrapper h3.section-title overrides it */
+/* Redundant rule removed:
+.section-title {
+  margin-bottom: 24px; 
 }
+*/
 
 .skills-grid {
   margin-top: 0;
@@ -345,31 +347,43 @@ a:hover {
 .skill-item img {
   width: 70px;
   height: 70px;
-  object-fit: contain;
+  object-fit: contain; /* Default object-fit for icons */
   margin-bottom: 10px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  padding: 6px;
+  padding: 6px; /* Default padding for icons */
 }
 
-/* Ensure NASM and Kali Linux icons are the same size as others */
+/* Specific icon overrides */
+.skill-item img[alt*="NASM"],
+.skill-item img[alt*="Kali"],
+.skill-item img[alt="Networking Fundamentals"] {
+  width: 70px; /* Explicitly set, though same as default, for clarity if default changes */
+  height: 70px;/* Explicitly set, though same as default, for clarity if default changes */
+  padding: 0;  /* Key override: remove padding */
+}
+
 .skill-item img[alt*="NASM"],
 .skill-item img[alt*="Kali"] {
-  width: 70px !important;
-  height: 70px !important;
-  object-fit: cover !important;
-  padding: 0 !important;
+  object-fit: cover; /* Override default 'contain' for these */
+}
+/* Networking Fundamentals uses the default 'contain' from .skill-item img or its own rule below */
+
+.skill-item img[alt="Networking Fundamentals"] {
+  /* It already gets width/height 70px and padding 0 from the grouped rule above. */
+  /* object-fit: contain; is the default from .skill-item img, so no need to redeclare unless for emphasis */
 }
 
+
 .skill-item img[alt*="GDB"] {
-  width: 85px !important;
-  height: 85px !important;
-  object-fit: contain;
-  padding: 0 !important;
+  width: 85px;  /* Specific size override */
+  height: 85px; /* Specific size override */
+  object-fit: contain; /* Explicitly set, same as default */
+  padding: 0;   /* Key override: remove padding */
 }
 
 .skill-item img[alt*="GDB"] + span {
-  margin-top: -14px;
+  margin-top: -14px; /* Adjust text position for larger GDB icon */
 }
 
 .skill-item span {
@@ -379,9 +393,11 @@ a:hover {
   font-weight: 500;
 }
 
-/* Remove old ul/li skills styling */
-.skills-section ul, .skills-section li {
-  all: unset;
-}
+/* 
+  Removed as skills are not ul/li based anymore in the skills grid:
+  .skills-section ul, .skills-section li {
+    all: unset;
+  }
+*/
 
 /*# sourceMappingURL=styles.css.map */

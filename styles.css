@@ -156,7 +156,7 @@ a:hover {
   line-height: 1.5em;
 }
 
-.profile svg .st0, .profile svg .st1 { /* Assuming SVGs might use this primary color */
+.profile svg .st0, .profile svg .st1 {
   fill: var(--color-primary);
 }
 
@@ -213,7 +213,7 @@ a:hover {
 .skills-hobbies-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 12px; /* MODIFIED: Reduced from 24px for less space between sections */
+  gap: 12px;
   margin-top: 40px;
 }
 
@@ -223,7 +223,7 @@ a:hover {
   text-align: left;
   color: var(--color-text-experience-light);
   font-weight: var(--font-weight-light);
-  margin-bottom: 0px; /* MODIFIED: Changed from 16px, gap will control inter-section spacing */
+  margin-bottom: 0px;
 }
 
 .section-wrapper h3.section-title {
@@ -231,7 +231,7 @@ a:hover {
   text-align: left;
   text-transform: uppercase;
   font-size: 1.2em;
-  margin-bottom: 28px; /* MODIFIED: Increased from 20px for more space below title, before icons */
+  margin-bottom: 28px;
   font-weight: var(--font-weight-semibold);
 }
 .section-wrapper p {
@@ -247,7 +247,6 @@ a:hover {
   margin-bottom: 8px;
 }
 
-/* --- Responsive --- */
 @media (max-width: 1200px) {
   .profile h1 {
     padding-top: 20px;
@@ -286,7 +285,7 @@ a:hover {
   }
   .skills-hobbies-wrapper {
     flex-direction: column;
-    gap: 10px; /* Adjusted gap for smaller screens */
+    gap: 10px;
   }
 }
 
@@ -320,10 +319,6 @@ a:hover {
   }
 }
 
-.section-title { /* This rule might be redundant given .section-wrapper h3.section-title */
-  margin-bottom: 24px; /* This was 24px, check if .section-wrapper h3.section-title overrides it */
-}
-
 .skills-grid {
   margin-top: 0;
   margin-bottom: 0;
@@ -352,34 +347,34 @@ a:hover {
   padding: 6px;
 }
 
-/* Ensure NASM and Kali Linux icons are the same size as others */
 .skill-item img[alt*="NASM"],
-.skill-item img[alt*="Kali"] {
-  width: 70px !important;
-  height: 70px !important;
-  object-fit: cover !important;
-  padding: 0 !important;
+.skill-item img[alt*="Kali"],
+.skill-item img[alt="Networking Fundamentals"] {
+  width: 70px;
+  height: 70px;
+  padding: 0;
 }
 
+.skill-item img[alt*="NASM"],
+.skill-item img[alt*="Kali"] {
+  object-fit: cover;
+}
+
+.skill-item img[alt="Networking Fundamentals"] {
+
+}
+
+
 .skill-item img[alt*="GDB"] {
-  width: 85px !important;
-  height: 85px !important;
+  width: 85px;
+  height: 85px;
   object-fit: contain;
-  padding: 0 !important;
+  padding: 0;
 }
 
 .skill-item img[alt*="GDB"] + span {
   margin-top: -14px;
 }
-
-/* START: Added rule for Networking Fundamentals icon */
-.skill-item img[alt="Networking Fundamentals"] {
-  width: 70px !important;
-  height: 70px !important;
-  object-fit: contain;
-  padding: 0 !important;
-}
-/* END: Added rule for Networking Fundamentals icon */
 
 .skill-item span {
   margin-top: 2px;
@@ -387,10 +382,3 @@ a:hover {
   color: var(--color-text-experience-light);
   font-weight: 500;
 }
-
-/* Remove old ul/li skills styling */
-.skills-section ul, .skills-section li {
-  all: unset;
-}
-
-/*# sourceMappingURL=styles.css.map */
