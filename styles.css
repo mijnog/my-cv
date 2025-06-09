@@ -223,7 +223,7 @@ a:hover {
   text-align: left;
   color: var(--color-text-experience-light);
   font-weight: var(--font-weight-light);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .section-wrapper h3.section-title {
@@ -320,12 +320,17 @@ a:hover {
   }
 }
 
+.section-title {
+  margin-bottom: 24px;
+}
+
 .skills-grid {
+  margin-top: 0;
+  margin-bottom: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px 12px;
-  margin-bottom: 32px;
 }
 
 .skill-item {
