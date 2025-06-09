@@ -213,7 +213,7 @@ a:hover {
 .skills-hobbies-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 12px; /* MODIFIED: Reduced from 24px for less space between sections */
   margin-top: 40px;
 }
 
@@ -223,7 +223,7 @@ a:hover {
   text-align: left;
   color: var(--color-text-experience-light);
   font-weight: var(--font-weight-light);
-  margin-bottom: 16px;
+  margin-bottom: 0px; /* MODIFIED: Changed from 16px, gap will control inter-section spacing */
 }
 
 .section-wrapper h3.section-title {
@@ -231,7 +231,7 @@ a:hover {
   text-align: left;
   text-transform: uppercase;
   font-size: 1.2em;
-  margin-bottom: 20px;
+  margin-bottom: 28px; /* MODIFIED: Increased from 20px for more space below title, before icons */
   font-weight: var(--font-weight-semibold);
 }
 .section-wrapper p {
@@ -286,7 +286,7 @@ a:hover {
   }
   .skills-hobbies-wrapper {
     flex-direction: column;
-    gap: 20px;
+    gap: 10px; /* Adjusted gap for smaller screens */
   }
 }
 
@@ -320,8 +320,8 @@ a:hover {
   }
 }
 
-.section-title {
-  margin-bottom: 24px;
+.section-title { /* This rule might be redundant given .section-wrapper h3.section-title */
+  margin-bottom: 24px; /* This was 24px, check if .section-wrapper h3.section-title overrides it */
 }
 
 .skills-grid {

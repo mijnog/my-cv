@@ -372,6 +372,15 @@ a:hover {
   margin-top: -14px;
 }
 
+/* START: Added rule for Networking Fundamentals icon */
+.skill-item img[alt="Networking Fundamentals"] {
+  width: 70px !important;
+  height: 70px !important;
+  object-fit: contain;
+  padding: 0 !important;
+}
+/* END: Added rule for Networking Fundamentals icon */
+
 .skill-item span {
   margin-top: 2px;
   font-size: 1em;
