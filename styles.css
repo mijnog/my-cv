@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,500,600,700);
 
 :root {
   --font-primary: "Open Sans", sans-serif;
@@ -49,7 +49,7 @@ a:hover {
 
 .bold {
   color: var(--color-text-profile-dark);
-  font-weight: var(--font-weight-semibold);
+  font-weight: 500;
 }
 
 .resume-wrapper {
@@ -383,6 +383,10 @@ a:hover {
   font-weight: 500;
 }
 
+.contact-info {
+  margin-bottom: 0px;
+}
+
 .contact-info p,
 .contact-social p {
   margin-bottom: 10px;
@@ -395,11 +399,12 @@ a:hover {
 .contact-info .bold,
 .contact-social .bold {
   color: var(--color-text-profile-dark);
-  font-weight: var(--font-weight-semibold);
+  font-weight: 500;
   margin-right: 8px;
 }
 
 .contact-social {
+  margin-top: 10px;
   display: block;
 }
 
