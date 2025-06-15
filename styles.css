@@ -382,3 +382,50 @@ a:hover {
   color: var(--color-text-experience-light);
   font-weight: 500;
 }
+
+.contact-info p,
+.contact-social p {
+  margin-bottom: 10px;
+  text-align: left;
+  font-weight: var(--font-weight-light);
+  display: block;
+  width: 100%;
+}
+
+.contact-info .bold,
+.contact-social .bold {
+  color: var(--color-text-profile-dark);
+  font-weight: var(--font-weight-semibold);
+  margin-right: 8px;
+}
+
+.contact-social {
+  display: block;
+}
+
+.contact-social p {
+  margin-bottom: 10px;
+  text-align: left;
+  font-weight: var(--font-weight-light);
+  display: flex;
+  justify-content: space-between;
+  max-width: 300px;
+}
+
+.contact-social a {
+  color: var(--color-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-social .social-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.contact-social a:hover {
+  text-decoration: underline;
+}
