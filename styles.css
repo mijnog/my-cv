@@ -145,6 +145,14 @@ a:hover {
   margin-bottom: 50px;
 }
 
+
+.profile .coming-soon {
+  text-align: left;
+  font-weight: var(--font-weight-medium);
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 .profile .books {
   text-align: left;
   font-weight: var(--font-weight-light);
@@ -349,10 +357,21 @@ a:hover {
 
 .skill-item img[alt*="NASM"],
 .skill-item img[alt*="Kali"],
-.skill-item img[alt="Networking Fundamentals"] {
+.skill-item img[alt="Networking Fundamentals"],
+.skill-item img[alt="Security Fundamentals"] {
   width: 70px;
   height: 70px;
   padding: 0;
+}
+
+.skill-item img[alt="BurpSuite"],
+.skill-item img[alt="x64dbg"],
+.skill-item img[alt="GitHub"],
+.skill-item img[alt="Git"] {
+  width: 70px;
+  height: 70px;
+  padding: 6px;
+  object-fit: contain;
 }
 
 .skill-item img[alt*="NASM"],
